@@ -21,8 +21,8 @@ function ChatLog() {
           <p className="chatlog__text">wow thats great! 😀</p>
           <p className="chatlog__text">wow thats great! 😀</p>
           <p className="chatlog__text">wow thats great! 😀</p>
-          <p className="chatlog__text">wow thats great! 😀</p>
-          <p className="chatlog__text">wow thats great! 😀</p>
+          <p className="chatlog__text">oh yeahhhhhhhh! 😀 😀</p>
+          <p className="chatlog__text">oh yeahhhhhhhh! 😀</p>
         </div>
       </div>
       <div className="chatlog__input__container"></div>

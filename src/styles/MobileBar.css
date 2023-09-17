@@ -1,7 +1,6 @@
 .mobileBar__wrapper {
   background-color: #00b998;
-  border-top-right-radius: 30px;
-  border-top-left-radius: 30px;
+
   position: fixed;
   bottom: 0;
   width: 100%;

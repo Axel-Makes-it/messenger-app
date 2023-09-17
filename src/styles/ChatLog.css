@@ -4,7 +4,6 @@
   gap: 15px;
   margin-left: 10px;
   margin-right: 10px;
-
   height: 90vh;
   overflow-y: scroll;
 }
@@ -32,4 +31,12 @@
   width: fit-content;
   border-radius: 15px;
   border-bottom-left-radius: 0px;
+}
+
+/*responsive*/
+@media (max-width: 940px) {
+  .chatlog {
+    height: 82vh;
+    padding-bottom: 20px;
+  }
 }
