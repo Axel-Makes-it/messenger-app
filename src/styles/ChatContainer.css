@@ -71,9 +71,10 @@
   display: flex;
   flex-direction: column;
   gap: 20px;
-  height: 78vh;
+  height: 79vh;
   overflow-y: scroll;
 }
+
 .chatcontainer__chat__rooms::-webkit-scrollbar {
   width: 0;
   height: 0;
@@ -104,4 +105,11 @@
 .chatcontainer__info__text {
   color: #00b998;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/*responsive*/
+@media (max-width: 940px) {
+  .chatcontainer__wapper {
+    display: none;
+  }
 }

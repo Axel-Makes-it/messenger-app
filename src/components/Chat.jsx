@@ -4,6 +4,7 @@ import Profile from "../images/profile.jpg";
 import Phone1 from "../images/phone1.svg";
 import Record from "../images/record.svg";
 import ChatInfo from "./ChatInfo";
+import ChatLog from "./ChatLog";
 
 function Chat() {
   return (
@@ -32,6 +33,7 @@ function Chat() {
             </ul>
           </div>
         </div>
+        <ChatLog />
       </div>
       <ChatInfo />
     </>

@@ -1,0 +1,32 @@
+.mobileBar__wrapper {
+  background-color: #00b998;
+  border-top-right-radius: 30px;
+  border-top-left-radius: 30px;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  z-index: 999;
+}
+.mobileBar__container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.mobileBar__ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  gap: 10px;
+}
+
+/*responsive*/
+@media (min-width: 940px) {
+  .mobileBar__wrapper {
+    display: none;
+  }
+}

@@ -1,5 +1,6 @@
 import React from "react";
 import "../styles/SideBar.css";
+import "../styles/MobileBar.css";
 import Logo from "../images/Logo2.png";
 import Chat from "../images/chat.svg";
 import Phone from "../images/Phone.svg";

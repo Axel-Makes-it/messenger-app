@@ -1,0 +1,35 @@
+.chatlog {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-left: 10px;
+  margin-right: 10px;
+
+  height: 90vh;
+  overflow-y: scroll;
+}
+
+.chatlog::-webkit-scrollbar {
+  width: 10px;
+}
+
+.chatlog::-webkit-scrollbar-thumb {
+  background: #00b998;
+  border-radius: 5px;
+}
+
+.chatlog::-webkit-scrollbar-thumb:hover {
+  background: #00fdcf;
+}
+
+.chatlog__text {
+  background-color: #00b998;
+  padding: 20px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  color: white;
+  width: fit-content;
+  border-radius: 15px;
+  border-bottom-left-radius: 0px;
+}

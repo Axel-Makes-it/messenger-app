@@ -44,3 +44,10 @@ li {
 li:hover {
   background-color: #1f232f;
 }
+
+/*responsive*/
+@media (max-width: 940px) {
+  .sidebar__wrapper {
+    display: none;
+  }
+}
