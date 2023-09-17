@@ -1,0 +1,107 @@
+.chatcontainer__wapper {
+  display: flex;
+  max-width: 24rem;
+  min-width: 24rem;
+  height: 100vh;
+}
+
+.chatcontainer__container {
+  background-color: #1f232f;
+  width: stretch;
+  border-right: 2px solid #292f3f;
+}
+
+.chatcontainer__chat__section {
+  color: white;
+  font-size: 18px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  border-bottom: 2px solid #292f3f;
+  height: 3rem;
+  align-items: center;
+}
+
+.chatcontainer__edit__img {
+  cursor: pointer;
+}
+
+.chatcontainer__chats__container {
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+  margin-right: 0px;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.chatcontainer__input__container {
+  background-color: #373e4e;
+  padding: 10px;
+  border-radius: 20px;
+  width: 95%;
+  display: flex;
+  justify-content: center;
+}
+
+.chatcontainer__chats__input {
+  outline: none;
+  border: none;
+  height: 40px;
+  width: 100%;
+  background-color: #373e4e;
+  color: white;
+  font-size: 18px;
+}
+
+.chatcontainer__chats__input::placeholder {
+  color: #c2c2c2;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.chatcontainer__form__container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+}
+
+.chatcontainer__chat__rooms {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  height: 78vh;
+  overflow-y: scroll;
+}
+.chatcontainer__chat__rooms::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}
+
+.chatcontainer__rooms__display {
+  background-color: #373e4e;
+  border-radius: 20px;
+  padding: 10px;
+  color: white;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  display: flex;
+  gap: 20px;
+  cursor: pointer;
+}
+
+.chatcontainer__img {
+  border-radius: 100px;
+  object-fit: cover;
+}
+
+.chatcontainer__info {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.chatcontainer__info__text {
+  color: #00b998;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}

@@ -1,0 +1,47 @@
+.chat__wrapper {
+  background-color: #292f3f;
+  width: 100%;
+  max-width: 100vw;
+}
+
+.chat__room {
+  color: white;
+  font-size: 24px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.chat__room__container {
+  background-color: #1f232f;
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  border-bottom: 2px solid #292f3f;
+  height: 3rem;
+  border-right: 2px solid #292f3f;
+}
+
+.chat__room__profile {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+}
+
+.chat__profile__img {
+  border-radius: 100px;
+  object-fit: cover;
+}
+
+.chat__room__action {
+  display: flex;
+}
+
+.chat__roon__action__ul {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+}
+
+.chat__roon__action__ul li:hover {
+  background-color: #292f3f;
+}
