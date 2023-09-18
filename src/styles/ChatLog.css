@@ -2,9 +2,9 @@
   display: flex;
   flex-direction: column;
   gap: 15px;
-  margin-left: 10px;
-  margin-right: 10px;
-  height: 90vh;
+  margin-left: 25px;
+  margin-right: 25px;
+  height: 82vh;
   overflow-y: scroll;
 }
 
@@ -38,5 +38,11 @@
   .chatlog {
     height: 82vh;
     padding-bottom: 20px;
+  }
+}
+
+@media (max-width: 940px) {
+  .chatlog {
+    height: 73vh;
   }
 }

@@ -3,7 +3,7 @@ import "../styles/Chat.css";
 import Profile from "../images/profile.jpg";
 import Phone1 from "../images/phone1.svg";
 import Record from "../images/record.svg";
-import ChatInfo from "./ChatInfo";
+
 import ChatLog from "./ChatLog";
 
 function Chat() {
@@ -35,7 +35,6 @@ function Chat() {
         </div>
         <ChatLog />
       </div>
-      <ChatInfo />
     </>
   );
 }

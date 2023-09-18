@@ -1,6 +1,7 @@
 import React from "react";
 import "../styles/ChatLog.css";
 import MobileBar from "./MobileBar";
+import MessegeInput from "./MessegeInput";
 
 function ChatLog() {
   return (
@@ -25,7 +26,7 @@ function ChatLog() {
           <p className="chatlog__text">oh yeahhhhhhhh! 😀</p>
         </div>
       </div>
-      <div className="chatlog__input__container"></div>
+      <MessegeInput />
       <MobileBar />
     </>
   );
