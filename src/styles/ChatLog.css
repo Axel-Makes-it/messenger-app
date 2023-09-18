@@ -3,7 +3,7 @@
   flex-direction: column;
   gap: 15px;
   margin-left: 25px;
-  margin-right: 25px;
+  margin-right: 5px;
   height: 82vh;
   overflow-y: scroll;
 }
