@@ -46,3 +46,9 @@
     height: 73vh;
   }
 }
+
+@media (min-height: 750px) {
+  .chatlog {
+    height: 66vh;
+  }
+}
