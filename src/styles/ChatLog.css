@@ -49,6 +49,12 @@
 
 @media (min-height: 750px) {
   .chatlog {
-    height: 66vh;
+    height: 71vh;
+  }
+}
+
+@media (min-height: 600px) {
+  .chatlog {
+    height: 59vh;
   }
 }
