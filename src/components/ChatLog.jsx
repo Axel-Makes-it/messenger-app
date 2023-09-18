@@ -1,32 +1,25 @@
-import React from "react";
+import React, { useState } from "react";
 import "../styles/ChatLog.css";
 import MobileBar from "./MobileBar";
-import MessegeInput from "./MessegeInput";
+import MessageInput from "./MessageInput";
 
 function ChatLog() {
+  const [messages, setMessages] = useState([]);
+
+  const addMessage = (newMessage) => {
+    setMessages([...messages, newMessage]);
+  };
+
   return (
     <>
-      <div>
-        <div className="chatlog">
-          <p className="chatlog__text">🤠Hello, chat chat!🤠</p>
-          <p className="chatlog__text">yeah yeah, talk 🤪</p>
-          <p className="chatlog__text">wow thats great! 😀</p>
-          <p className="chatlog__text">wow thats great! 😀</p>
-          <p className="chatlog__text">wow thats great! 😀</p>
-          <p className="chatlog__text">wow thats great! 😀</p>
-          <p className="chatlog__text">wow thats great! 😀</p>
-          <p className="chatlog__text">wow thats great! 😀</p>
-          <p className="chatlog__text">wow thats great! 😀</p>
-          <p className="chatlog__text">wow thats great! 😀</p>
-          <p className="chatlog__text">wow thats great! 😀</p>
-          <p className="chatlog__text">wow thats great! 😀</p>
-          <p className="chatlog__text">wow thats great! 😀</p>
-          <p className="chatlog__text">wow thats great! 😀</p>
-          <p className="chatlog__text">oh yeahhhhhhhh! 😀 😀</p>
-          <p className="chatlog__text">oh yeahhhhhhhh! 😀</p>
-        </div>
+      <div className="chatlog">
+        {messages.map((message, index) => (
+          <p key={index} className="chatlog__text">
+            {message}
+          </p>
+        ))}
       </div>
-      <MessegeInput />
+      <MessageInput addMessage={addMessage} />
       <MobileBar />
     </>
   );
