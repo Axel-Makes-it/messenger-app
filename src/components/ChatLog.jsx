@@ -9,8 +9,12 @@ import {
   orderBy,
   limit,
   onSnapshot,
+  addDoc,
+  serverTimestamp,
 } from "firebase/firestore";
 import { initializeApp } from "firebase/app";
+import { getAuth, onAuthStateChanged } from "firebase/auth";
+import { v4 as uuidv4 } from "uuid";
 
 const firebaseConfig = {
   apiKey: "AIzaSyAEErL3_7t01i68dBE0c5AvGYmimbJdut4",
@@ -24,13 +28,27 @@ const firebaseConfig = {
 
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
+const auth = getAuth();
 
 function ChatLog() {
   const [messages, setMessages] = useState([]);
+  const [user, setUser] = useState(null);
 
   const addMessage = (newMessage) => {
     setMessages([...messages, newMessage]);
   };
+
+  useEffect(() => {
+    const unsubscribe = onAuthStateChanged(auth, (user) => {
+      if (user) {
+        setUser(user);
+      } else {
+        setUser(null);
+      }
+    });
+
+    return () => unsubscribe();
+  }, []);
 
   useEffect(() => {
     const messagesCollection = collection(db, "messages");
@@ -46,17 +64,53 @@ function ChatLog() {
     });
 
     return () => unsubscribe();
-  }, [db]);
+  }, []);
+
+  const sendMessage = async (text) => {
+    if (text.trim() !== "") {
+      const messagesCollection = collection(db, "messages");
+      const randomUniqueId = uuidv4();
+      try {
+        const user = auth.currentUser;
+        if (user) {
+          await addDoc(messagesCollection, {
+            text,
+            userId: user.uid,
+            timestamp: serverTimestamp(),
+            id: randomUniqueId,
+            photoURL: user.photoURL,
+          });
+        }
+      } catch (error) {
+        console.error("Error sending message: ", error);
+      }
+    }
+  };
 
   return (
     <div className="chatlog">
-      {messages.map((messages) => (
-        <p key={messages.id} className="chatlog__text">
-          {messages.text}
-        </p>
+      {messages.map((message) => (
+        <div
+          key={message.id}
+          className={`message ${
+            user && user.uid === message.userId ? "own-message" : ""
+          }`}
+        >
+          {user && user.uid !== message.userId && (
+            <div className="user-info">
+              <img
+                src={message.photoURL}
+                alt={message.displayName}
+                className="user-photo"
+              />
+              <p className="user-name">{message.displayName}</p>
+            </div>
+          )}
+          <p className="chatlog__text">{message.text}</p>
+        </div>
       ))}
 
-      <MessageInput db={db} addMessage={addMessage} />
+      <MessageInput db={db} addMessage={addMessage} sendMessage={sendMessage} />
       <MobileBar />
     </div>
   );
