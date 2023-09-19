@@ -7,8 +7,20 @@ import Phone from "../images/Phone.svg";
 import Friends from "../images/Friends.svg";
 import Settings from "../images/Settings.svg";
 import Logout from "../images/Logout.svg";
+import { getAuth, signOut } from "firebase/auth";
 
 function MobileBar() {
+  const handleLogout = () => {
+    const auth = getAuth();
+    signOut(auth)
+      .then(() => {
+        console.log("Logged out - worked");
+      })
+      .catch((error) => {
+        console.error("Logout error", error);
+      });
+  };
+
   return (
     <div className="mobileBar__wrapper">
       <div className="mobileBar__container">
@@ -29,7 +41,7 @@ function MobileBar() {
             <img src={Settings} alt="Settings" width={30} />
           </li>
         </ul>
-        <div className="mobileBar__img">
+        <div className="mobileBar__img" onClick={handleLogout}>
           <li>
             <img src={Logout} alt="Logout" width={30} />
           </li>

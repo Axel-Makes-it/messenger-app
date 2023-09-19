@@ -1,21 +1,32 @@
 import React, { useState } from "react";
 import "../styles/MessageInput.css";
 import Send from "../images/send.svg";
+import { addDoc, collection, serverTimestamp } from "firebase/firestore";
 
-function MessageInput({ addMessage }) {
+function MessageInput({ db, addMessage }) {
   const [message, setMessage] = useState("");
 
   const handleInput = (e) => {
     setMessage(e.target.value);
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    addMessage(message);
-    setMessage("");
-    console.log(message);
-  };
 
+    if (message.trim() !== "") {
+      const messagesCollection = collection(db, "messages");
+      try {
+        await addDoc(messagesCollection, {
+          text: message,
+          timestamp: serverTimestamp(),
+        });
+        addMessage(message);
+        setMessage("");
+      } catch (error) {
+        console.error("Error adding message: ", error);
+      }
+    }
+  };
   return (
     <>
       <form className="messegeInput__form" onSubmit={handleSubmit}>

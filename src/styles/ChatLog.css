@@ -2,10 +2,15 @@
   display: flex;
   flex-direction: column;
   gap: 15px;
-  margin-left: 25px;
+  margin-left: 0px;
+
   margin-right: 5px;
   height: 82vh;
   overflow-y: scroll;
+}
+
+.chatlog__text {
+  margin-left: 25px;
 }
 
 .chatlog::-webkit-scrollbar {
@@ -34,7 +39,7 @@
 }
 
 /*responsive*/
-@media (max-width: 940px) {
+@media (max-width: 1500px) {
   .chatlog {
     height: 82vh;
     padding-bottom: 20px;
@@ -49,12 +54,12 @@
 
 @media (min-height: 750px) {
   .chatlog {
-    height: 71vh;
+    height: 73vh;
   }
 }
 
-@media (min-height: 767px) {
+@media (max-height: 800px) {
   .chatlog {
-    height: 71vh;
+    height: 75vh;
   }
 }

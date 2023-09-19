@@ -6,3 +6,9 @@ body {
   display: flex;
   overflow: hidden;
 }
+
+.app__loading {
+  color: white;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 34px;
+}
