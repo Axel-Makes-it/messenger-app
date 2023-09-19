@@ -3,7 +3,7 @@ import "../styles/MessageInput.css";
 import Send from "../images/send.svg";
 import { addDoc, collection, serverTimestamp } from "firebase/firestore";
 import { v4 as uuidv4 } from "uuid";
-import { getAuth } from "firebase/auth"; // Import getAuth function from Firebase
+import { getAuth } from "firebase/auth";
 
 function MessageInput({ db, addMessage }) {
   const [message, setMessage] = useState("");
